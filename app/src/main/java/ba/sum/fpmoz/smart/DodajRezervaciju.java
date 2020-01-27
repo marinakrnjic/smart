@@ -107,7 +107,6 @@ public class DodajRezervaciju extends DialogFragment {
                 }
 
 
-
                 referenca.child(parkingId).push().setValue(new Rezervacija(vrijemeODTS, vrijemeDOTS, registracija));
                 dismiss();
             }
