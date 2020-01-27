@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Info">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dobrodošli na mParking aplikaciju Sveučilišta u Mostaru. Sveučilište u Mostaru raspolaže sa 62 parkirna mjesta, te cilj ove mParking aplikacije je omogućiti korisnicima pregled parking mjesta, uvid koja su parking mjesta zauzeta a koja slobodna, te mogućnost rezervacije parkinga. Također, imamo neka ograničenja što se tiče rezervacije. Pa tako radnim danima od ponedjeljka do petka mogućnost rezervacije je od 8-20sati, subotom od 8-12sati, a nedjeljom nije moguće rezervirati, ovo navedeno je usklađeno sa radom Sveučilišta. Veća svrha ove aplikacije je uspostavljanje tzv. Smart Sveučilišta, a na kraju cilj je proširiti na cijeli grad Mostar."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
