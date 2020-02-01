@@ -105,8 +105,7 @@ public class DodajRezervaciju extends DialogFragment {
                     spasi.setText("Unjeli ste pogrešnu godinu!");
                     return;
                 }
-
-                String s = "";
+                
 
 
                 referenca.child(parkingId).push().setValue(new Rezervacija(vrijemeODTS, vrijemeDOTS, registracija));

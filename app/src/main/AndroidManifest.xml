@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Registracija"></activity>
         <activity android:name=".Info" />
         <activity
             android:name=".RezervacijaParkinga"
@@ -37,7 +38,7 @@
 
         <activity
             android:name=".ParkingMap"
-            android:label="@string/title_activity_parking_map"></activity>
+            android:label="@string/title_activity_parking_map" />
         <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
