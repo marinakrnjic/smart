@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,8 @@ import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 import java.io.Console;
 import java.util.Calendar;
@@ -51,7 +54,11 @@ public class DodajRezervaciju extends DialogFragment {
         DatePicker datumDP = view.findViewById(R.id.datum);
         TimePicker vrijemeOD = view.findViewById(R.id.od_vrijeme);
         TimePicker vrijemeDO = view.findViewById(R.id.do_vrijeme);
-        EditText registracijaEdit = view.findViewById(R.id.unosRegistracije);
+
+        String registracija = Registracija.Reg;
+
+        TextView prikazRegistracije= view.findViewById(R.id.prikazRegistracije);
+        prikazRegistracije.setText("Vaša reg: "+registracija);
         Button spasi = view.findViewById(R.id.spasi);
 
         spasi.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +77,12 @@ public class DodajRezervaciju extends DialogFragment {
 
                 Long vrijemeDOTS = kalendar.getTimeInMillis();
 
-                String registracija = registracijaEdit.getText().toString();
+
+
+              //  String registracija = reg.getRegistracija();
+
+               // registracijaEdit.setText(registracija);
+                // String registracija = registracijaEdit.getText().toString();
 
                 /* ovdje dodati provjere */
 

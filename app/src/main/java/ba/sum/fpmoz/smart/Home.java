@@ -41,7 +41,6 @@ public class Home extends AppCompatActivity {
     }
 
 
-
     public void openInfo(){
         Intent intent = new Intent(this,Info.class);
         startActivity(intent);

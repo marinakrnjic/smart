@@ -10,12 +10,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <EditText
-                android:id="@+id/unosRegistracije"
+            <TextView
+                android:id="@+id/prikazRegistracije"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Molimo unesite registracijsku oznaku"
+                android:hint="Vaša reg. je: "
                 android:inputType="textPersonName"
                 android:textSize="24sp" />
 
