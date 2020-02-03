@@ -26,7 +26,7 @@ public class Rezervacija {
         this.registracija = registracija;
     }
 
-    public ArrayList<Rezervacija> rezervacijaList = new ArrayList<>();
+    public static ArrayList<Rezervacija> rezervacijaList = new ArrayList<>();
 
     public String getRegistracija() {
         return registracija;
