@@ -1,6 +1,7 @@
 package ba.sum.fpmoz.smart;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,20 +10,27 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
 import java.io.Console;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.TimeZone;
+
 
 public class DodajRezervaciju extends DialogFragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -78,13 +86,81 @@ public class DodajRezervaciju extends DialogFragment {
                 Long vrijemeDOTS = kalendar.getTimeInMillis();
 
 
-
-              //  String registracija = reg.getRegistracija();
-
-               // registracijaEdit.setText(registracija);
-                // String registracija = registracijaEdit.getText().toString();
-
                 /* ovdje dodati provjere */
+
+                Rezervacija rezervacija = new Rezervacija(vrijemeODTS,vrijemeDOTS,registracija);
+
+                ArrayList<Rezervacija> newrezervacijaList;
+                //Rezervacija.dohvatiRezervacije();
+                //newrezervacijaList = Rezervacija.rezervacijaList;
+                ArrayList <Rezervacija> rezervacijaList = new ArrayList<>();
+                rezervacijaList.clear();
+                //FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //DatabaseReference referenca = database.getReference("rezervacije");
+
+                RezervacijeAdapter adapter;
+                adapter = new RezervacijeAdapter(rezervacijaList);
+                referenca.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        int i=0;
+                        for (DataSnapshot rezervacijaDS:dataSnapshot.getChildren()){
+                            Rezervacija rezervacija = rezervacijaDS.getValue(Rezervacija.class);
+                            rezervacijaList.add(rezervacija);
+                            System.out.println("Velicina unutar upita: "+rezervacijaList.size());
+                        }
+                        adapter.updateList(rezervacijaList);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        System.out.println("Greška: " + databaseError.getCode());
+                    }
+                });
+
+
+                System.out.println("Veličina podataka: "+ rezervacijaList.size());
+
+                if (rezervacijaList.size() > 0) {
+                    for (int i = 0; i < rezervacijaList.size(); i++) {
+                        Rezervacija dohvacenaRezervacija = rezervacijaList.get(i);
+                        System.out.println("Registracija je: "+dohvacenaRezervacija.getRegistracija());
+                        if(dohvacenaRezervacija.getRegistracija().equals(registracija)){
+                            spasi.setText("Već imate aktivnu rezervaciju!");
+                            return;
+                        }
+
+                    }
+                }
+
+
+                       /* if (dohvacenaRezervacija.getVrijemeOD() < rezervacija.getVrijemeOD() && rezervacija.getVrijemeOD() < dohvacenaRezervacija.getVrijemeDO()) {
+                            ispravno = false;
+                        } else if (dohvacenaRezervacija.getVrijemeOD() > rezervacija.getVrijemeOD() && rezervacija.getVrijemeDO() > dohvacenaRezervacija.getVrijemeDO()) {
+                            ispravno = false;
+                        } else {
+                            ispravno = true;
+                        }
+                    }
+                    if (!ispravno) {
+                        Toast.makeText(getContext(), "Parking je već zauzet", Toast.LENGTH_SHORT).show();
+                    } else {
+                        referenca.push().setValue(rezervacija);
+                        Toast.makeText(getContext(), "Rezervirano", Toast.LENGTH_SHORT);
+                        dismiss();
+                    }
+                } else {
+                    referenca.push().setValue(rezervacija);
+                    Toast.makeText(getContext(), "Rezervirano", Toast.LENGTH_SHORT);
+                    dismiss();
+                }
+*/
+                Log.d("txt", String.valueOf(vrijemeOD.getHour()));
+                Log.d("txt1", String.valueOf(vrijemeDO.getHour()));
+
+
 
                 if(registracija.equals("")){
                     spasi.setText("Niste unjeli registraciju!");
@@ -117,7 +193,6 @@ public class DodajRezervaciju extends DialogFragment {
                     spasi.setText("Unjeli ste pogrešnu godinu!");
                     return;
                 }
-                
 
 
                 referenca.child(parkingId).push().setValue(new Rezervacija(vrijemeODTS, vrijemeDOTS, registracija));

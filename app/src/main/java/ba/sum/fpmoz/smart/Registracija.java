@@ -9,7 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Registracija extends AppCompatActivity {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     private Button button;
     private EditText regOznaka;
@@ -41,6 +45,8 @@ public class Registracija extends AppCompatActivity {
         }
          //ovdje se pamti registracija automobila
         Reg = registracija;
+
+        DatabaseReference referenca = database.getReference("registracije");
 
 
         Intent intent = new Intent(this,ParkingMjesta.class);

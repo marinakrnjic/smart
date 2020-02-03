@@ -4,16 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0C4877"
     tools:context=".Info">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dobrodošli na mParking aplikaciju Sveučilišta u Mostaru. Sveučilište u Mostaru raspolaže sa 62 parkirna mjesta, te cilj ove mParking aplikacije je omogućiti korisnicima pregled parking mjesta, uvid koja su parking mjesta zauzeta a koja slobodna, te mogućnost rezervacije parkinga. Također, imamo neka ograničenja što se tiče rezervacije. Pa tako radnim danima od ponedjeljka do petka mogućnost rezervacije je od 8-20sati, subotom od 8-12sati, a nedjeljom nije moguće rezervirati, ovo navedeno je usklađeno sa radom Sveučilišta. Veća svrha ove aplikacije je uspostavljanje tzv. Smart Sveučilišta, a na kraju cilj je proširiti na cijeli grad Mostar."
+        android:layout_width="375dp"
+        android:layout_height="68dp"
+        android:text="Dobrodošli u smart parking aplikaciju"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="362dp"
+        android:layout_height="409dp"
+        android:text="Aplikacija je nastala u sklopu izgradnje pametnog kampusa Sveučilišta u Mostaru.\nNamijenjena je pregledu i rezervaciji 62 parking mjesta na Sveučilištu.\n\nKako biste na parkingu unaprijed osigurali mjesto samo za Vas potrebno se prvo registrirati unosom Vaših podataka. Nakon registracije, ili prijave, možete odabrati željeno parking mjesto, te datum i termin rezervacije.\n\n\nRadno vrijeme parkinga:\n\nPON - PET\t8:00 - 20:00\n\nSUB\t\t\t\t\t\t\t8:00 - 12:00\n\nNedjeljom i državnim praznicima Parking ne radi."
+        android:textColor="#FFFFFF"
+
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="146dp"
+        android:layout_height="79dp"
+        android:contentDescription="slikasum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955"
+        app:srcCompat="@drawable/smartlogo" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="113dp"
+        android:layout_height="68dp"
+        android:contentDescription="summ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058"
+        app:srcCompat="@drawable/sumbijeli" />
 </androidx.constraintlayout.widget.ConstraintLayout>

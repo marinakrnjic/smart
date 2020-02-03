@@ -6,37 +6,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
     private Button button;
-    private TextView BrojSlobodnih;
     private ArrayList<ParkingMjesto> parkingMjesta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        button = findViewById(R.id.button);
+
+        button = findViewById(R.id.otvoriRegistraciju);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View v) {
+                openRegistracija();
+            }
+        });
+
+        ParkingStatusAdapter psa = new ParkingStatusAdapter(parkingMjesta);
+
+        ImageView img = (ImageView) findViewById(R.id.infoimg);
+        img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openInfo();
             }
         });
 
-        button = findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openParkingMap();
-            }
-        });
-
-        ParkingStatusAdapter psa = new ParkingStatusAdapter(parkingMjesta);
-        BrojSlobodnih = findViewById(R.id.BrojSlobodnih);
-        BrojSlobodnih.setText("Slobodnih parking mjesta je: ");
 
     }
 
@@ -46,14 +45,10 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openParkingMap(){
+    public void openRegistracija(){
         Intent intent = new Intent(this,Registracija.class);
         startActivity(intent);
     }
-
-
-
-
 
 
 }

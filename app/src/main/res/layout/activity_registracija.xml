@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registracija">
-    android:background="@drawable/grdnt">
+    tools:context=".Registracija"
+    android:background="#0C4877">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +34,7 @@
                     android:hint="Registracija Vozila"
                     android:textColorHint="#d9e5f3"
                     android:layout_marginLeft="15dp"
-                    android:background="#00000000"
+                    android:background="#FFFFFF"
                     android:letterSpacing="0.1"
                     android:textSize="16dp"
                     android:inputType="text"
@@ -87,9 +88,9 @@
         android:gravity="center"
         android:layout_marginBottom="400dp">
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/ibytes"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ikona"
             />
     </LinearLayout>
 
