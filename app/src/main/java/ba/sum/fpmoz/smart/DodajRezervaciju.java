@@ -143,7 +143,7 @@ public class DodajRezervaciju extends DialogFragment {
                 Calendar cal = Calendar.getInstance();
 
                 if(datumDP.getYear() != cal.get(Calendar.YEAR)){
-                    spasi.setText("Unjeli ste pogrešnu godinu!");
+                    spasi.setText("Unijeli ste pogrešnu godinu!");
                     return;
                 }
                 boolean ispravno = false;
@@ -158,6 +158,7 @@ public class DodajRezervaciju extends DialogFragment {
                                 spasi.setText("Već imate aktivnu rezervaciju!");
                                 return;
                             }
+                        }
                             if (dohvacenaRezervacija.getVrijemeOD() < rezervacija.getVrijemeOD() && rezervacija.getVrijemeOD() < dohvacenaRezervacija.getVrijemeDO()) {
                                 ispravno = false;
                             } else if (dohvacenaRezervacija.getVrijemeOD() > rezervacija.getVrijemeOD() && rezervacija.getVrijemeDO() > dohvacenaRezervacija.getVrijemeDO()) {
@@ -168,15 +169,14 @@ public class DodajRezervaciju extends DialogFragment {
                         }
                         if (!ispravno) {
                             Toast.makeText(getContext(), "Parking je već zauzet", Toast.LENGTH_SHORT).show();
+                            spasi.setText("Parking zauzet!");
+                            return;
                         } else {
                             referenca.push().setValue(rezervacija);
-                            Toast.makeText(getContext(), "Rezervirano", Toast.LENGTH_SHORT);
+                            Toast.makeText(getContext(), "Rezervirano", Toast.LENGTH_SHORT).show();
                             dismiss();
-                        }
                     }
                 }
-
-
                 referenca.child(parkingId).push().setValue(new Rezervacija(vrijemeODTS, vrijemeDOTS, registracija));
                 dismiss();
             }
