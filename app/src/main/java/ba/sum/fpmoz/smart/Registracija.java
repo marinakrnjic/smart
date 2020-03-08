@@ -49,7 +49,7 @@ public class Registracija extends AppCompatActivity {
         DatabaseReference referenca = database.getReference("registracije");
 
 
-        Intent intent = new Intent(this,ParkingMjesta.class);
+        Intent intent = new Intent(this,ParkingMap.class);
         startActivity(intent);
 
     }

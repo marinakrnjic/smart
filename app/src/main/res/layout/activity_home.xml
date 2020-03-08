@@ -21,6 +21,8 @@
         app:layout_constraintVertical_bias="0.59"
         app:srcCompat="@drawable/auti" />
 
+
+
     <Button
         android:id="@+id/otvoriRegistraciju"
         style="?android:attr/borderlessButtonStyle"
@@ -74,6 +76,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/info1" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
