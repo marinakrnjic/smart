@@ -19,11 +19,22 @@ public class Rezervacija {
     public long vrijemeOD;
     public long vrijemeDO;
     public String registracija;
+    public String id;
 
     public Rezervacija(long vrijemeOD, long vrijemeDO, String registracija) {
         this.vrijemeOD = vrijemeOD;
         this.vrijemeDO = vrijemeDO;
         this.registracija = registracija;
+        this.id=id;
+
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public static ArrayList<Rezervacija> rezervacijaList = new ArrayList<>();

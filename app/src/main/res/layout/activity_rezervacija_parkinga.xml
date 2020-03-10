@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#003566"
     tools:context=".RezervacijaParkinga">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#0C4877"
         app:srcCompat="@drawable/ic_add_black_24dp" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

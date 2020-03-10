@@ -6,21 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5sp"
+    app:cardBackgroundColor=" #f2f2f2"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp"
-    app:cardUseCompatPadding="true"
-    >
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="174dp">
 
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100sp"
-            android:layout_height="match_parent"
+            android:layout_width="97dp"
+            android:layout_height="85dp"
             android:layout_weight="0"
+            android:translationY="40dp"
             app:srcCompat="@drawable/ic_local_parking_black_24dp" />
 
         <LinearLayout
@@ -34,22 +35,65 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:translationX="50dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="26dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:text="Od:"
+                android:textColor="#0C4877"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/zauzetoOD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="20dp" />
+                android:textSize="18dp"
+                android:translationX="50dp"
+                android:translationY="-20dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="26dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Do:"
+                android:textColor="#0C4877"
+                android:textSize="15dp"
+                android:translationY="-20dp" />
 
             <TextView
                 android:id="@+id/zauzetoDO"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:text="TextView"
-                android:textSize="20dp" />
+                android:textSize="18dp"
+                android:translationX="50dp"
+                android:translationY="-50dp" />
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/odustaniBtn"
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_delete_black_24dp"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:translationY="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
 
